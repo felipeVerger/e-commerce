@@ -10,13 +10,21 @@ export const NavContainer = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+`
+
+export const LogoBlock = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
 `
 
 export const Logo = styled.h2`
     color: ${(props) => props.theme.colors.white_color};
     font-family: ${(props) => props.theme.fonts.primary_font};
     font-size: 2em;
-    text-transform: uppercase;
 `
 
 

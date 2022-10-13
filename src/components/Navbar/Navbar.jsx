@@ -1,16 +1,20 @@
-import React from 'react';
-import {Logo, NavContainer, Input, UserContainer, UserBlock, UserInfo, SearchButton, LogoutButton, LoginButton, UserName, ButtonAuth} from './NavStyles';
-import Avatar from 'react-avatar';
+import React, { useState } from 'react';
+import {Logo, NavContainer, Input, UserContainer, UserBlock, UserInfo, SearchButton, LogoutButton, LoginButton, UserName, ButtonAuth, LogoBlock} from './NavStyles';
 import { Link } from 'react-router-dom';
+import {FcMoneyTransfer} from 'react-icons/fc';
+import Avatar from 'react-avatar';
 
 
 const Navbar = () => {
-  const user = false;
+  const [user, setUser] = useState(false);
 
   return (
     <NavContainer>
       <Link to='/' style={{ textDecoration: 'none' }}>
-        <Logo>fv-commerce</Logo>
+        <LogoBlock>
+          <FcMoneyTransfer fontSize='2.5em'/>
+          <Logo>MyBills</Logo>
+        </LogoBlock>
       </Link>
       <div>
         <Input/>
@@ -23,7 +27,7 @@ const Navbar = () => {
               <Avatar round size='60'/>
               <UserName>Felipe Verger</UserName>
             </UserInfo>
-            <LogoutButton>Logout</LogoutButton>
+            <LogoutButton onClick={() => setUser(!user)}>Logout</LogoutButton>
           </UserBlock>
         ) : (
           <LoginButton to='/auth'>
